@@ -1,7 +1,7 @@
 {
     "name": "sensors",
     "version": "1.0.0",
-    "description": "PH2.0传感器",
+    "description": "PH2.0sensor",
     "license": "MIT",
     "dependencies": {
         "core": "*",
