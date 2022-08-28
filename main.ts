@@ -207,9 +207,9 @@ enum Mode {
  //% color="#FFA500" weight=10 icon="\uf2c9" block="Sensor:bit"
 namespace sensors { 
    
-    //% blockId=touchbutton block="touch |digital pin %pin"   group="触摸模块"
+    //% blockId=touchbutton block="touch |digital pin %pin"   group="touch module"
     //% weight=70
-    //% subcategory="基础输入模块"
+    //% subcategory="Basic input module"
     export function touchButton(pin: DigitalPin): boolean {
        // pins.digitalWritePin(pin, 0)
         if (pins.digitalReadPin(pin) == 1) {
@@ -219,9 +219,9 @@ namespace sensors {
         }
     }
 
-    //% blockId=button block="Button |digital pin %pin"   group="按键模块"
+    //% blockId=button block="Button |digital pin %pin"   group="key module"
     //% weight=70
-    //% subcategory="基础输入模块"
+    //% subcategory="Basic input module"
     export function Button(pin: DigitalPin): boolean {
      //   pins.digitalWritePin(pin, 0)
         if (pins.digitalReadPin(pin) == 1) {
@@ -231,9 +231,9 @@ namespace sensors {
         }
     }
 
-    //% blockId=crashbutton block="crashButton |digital pin %pin"   group="触碰模块"
+    //% blockId=crashbutton block="crashButton |digital pin %pin"   group="touch module"
     //% weight=70
-    //% subcategory="基础输入模块"
+    //% subcategory="Basic input module"
     export function crashButton(pin: DigitalPin): boolean {
        // pins.digitalWritePin(pin, 0)
         if (pins.digitalReadPin(pin) == 1) {
@@ -243,17 +243,17 @@ namespace sensors {
         }
     }
 
-    //% blockId=slideRheostat block="slideRheostat |analog pin %pin"   group="滑动变阻器模块"
+    //% blockId=slideRheostat block="slideRheostat |analog pin %pin"   group="Sliding Rheostat Module"
     //% weight=70
-    //% subcategory="基础输入模块"
+    //% subcategory="Basic input module"
     export function slideRheostat(pin: AnalogPin): number {
         let row = pins.analogReadPin(pin)
         return row
     }
 
-    //% blockId=rotaryPotentiometer block="rotaryPotentiometer |analog pin %pin" group="旋转电位器模块"
+    //% blockId=rotaryPotentiometer block="rotaryPotentiometer |analog pin %pin" group="Rotary Potentiometer Module"
     //% weight=70
-    //% subcategory="基础输入模块"
+    //% subcategory="Basic input module"
     export function rotaryPotentiometer(pin: AnalogPin): number {
         let row = pins.analogReadPin(pin)
         return row
@@ -295,18 +295,18 @@ namespace sensors {
     let _SDO = 0
     let _SCL = 0
 
-    //% blockId=actuator_keyborad_pin block="actuator_keyborad_pin|SDOPIN %SDO|SCLPIN %SCL"   group="矩阵键盘模块"
+    //% blockId=actuator_keyborad_pin block="actuator_keyborad_pin|SDOPIN %SDO|SCLPIN %SCL"   group="module keyboard matrix"
     //% weight=71
-    //% subcategory="基础输入模块"
+    //% subcategory="Basic input module"
     export function actuator_keyborad_pin(SDO: DigitalPin, SCL: DigitalPin): void {
 
         _SDO = SDO
         _SCL = SCL
     }
 
-    //% blockId=actuator_keyborad_read block="actuator_keyborad_read"   group="矩阵键盘模块"
+    //% blockId=actuator_keyborad_read block="actuator_keyborad_read"   group="matrix keyboard module"
     //% weight=70
-    //% subcategory="基础输入模块"
+    //% subcategory="Basic input module"
     export function actuator_keyborad_read(): string {
         let DATA = 0
         pins.digitalWritePin(_SDO, 1)
@@ -348,18 +348,18 @@ namespace sensors {
     let Ypin = 0
     let Bpin = 0
 
-    //% blockId=rockerPin block="rockerPin setup | pinX %pinx|pinY %piny|pinB %pinb" group="摇杆模块"
+    //% blockId=rockerPin block="rockerPin setup | pinX %pinx|pinY %piny|pinB %pinb" group="joystick module"
     //% weight=70
-    //% subcategory="基础输入模块"
+    //% subcategory="Basic input module"
     export function rockerPin(pinx: AnalogPin, piny: AnalogPin, pinb: DigitalPin): void {
         Xpin = pinx
         Ypin = piny
         Bpin = pinb
     }
 
-    //% blockId=_analogRead block="select analog pin  %selectpin" group="摇杆模块"
+    //% blockId=_analogRead block="select analog pin  %selectpin" group="joystick module"
     //% weight=69
-    //% subcategory="基础输入模块"
+    //% subcategory="Basic input module"
     export function _analogRead(selectpin: _rockerpin): number {
         let a
         if (selectpin == 0)
@@ -369,9 +369,9 @@ namespace sensors {
         return pins.analogReadPin(a)
     }
 
-    //% blockId=_digitalRead block="Is the rocker module pressed?" group="摇杆模块"
+    //% blockId=_digitalRead block="Is the rocker module pressed?" group="joystick module"
     //% weight=68
-    //% subcategory="基础输入模块"
+    //% subcategory="Basic input module"
     export function _digitalRead(): boolean {
        // pins.digitalWritePin(Bpin, 0)
         if (pins.digitalReadPin(Bpin) == 1) {
@@ -383,18 +383,18 @@ namespace sensors {
 
     let _DIO = 0
     let _CLK = 0
-    //% blockId=basic_piano_pin block="basic_piano_pin |DIO pin %DIO|CLK pin %CLK"   group="触摸钢琴模块 V1"
+    //% blockId=basic_piano_pin block="basic_piano_pin |DIO pin %DIO|CLK pin %CLK"   group="Touch the piano module V1"
     //% weight=70
-    //% subcategory="基础输入模块"
+    //% subcategory="Basic input module"
     export function basic_piano_pin(DIO: DigitalPin, CLK: DigitalPin): void {
 
         _DIO = DIO
         _CLK = CLK
     }
 
-    //% blockId=basic_piano_play block="basic_piano_play"   group="触摸钢琴模块 V1"
+    //% blockId=basic_piano_play block="basic_piano_play"   group="touch piano module V1"
     //% weight=69
-    //% subcategory="基础输入模块"
+    //% subcategory="Basic input module"
     export function basic_piano_play(): void {
 
         if (0 == pins.digitalReadPin(_DIO)) {
@@ -430,9 +430,9 @@ namespace sensors {
     let _pianoDIO = 0
     let _pianoCLK = 0
 
-    //% blockId=piano_v2_init block="piano_v2_init|DIO %pianoDIO|CLK %pianoCLK"   group="触摸钢琴模块 V2"
+    //% blockId=piano_v2_init block="piano_v2_init|DIO %pianoDIO|CLK %pianoCLK"   group="touch piano module V2"
     //% weight=61
-    //% subcategory="基础输入模块"
+    //% subcategory="Basic input module"
     export function piano_v2_init(pianoDIO: DigitalPin, pianoCLK: DigitalPin): void {
 
         _pianoDIO = pianoDIO
@@ -441,7 +441,7 @@ namespace sensors {
 
     //% blockId=piano_v2_play block="piano_v2_read"   group="触摸钢琴模块 V2"
     //% weight=60
-    //% subcategory="基础输入模块"
+    //% subcategory="Basic input module"
     export function piano_v2_play(): void {
         let DATA = 0
         pins.digitalWritePin(_pianoDIO, 1)
@@ -475,7 +475,7 @@ namespace sensors {
      */
     //% blockId=Gamepad_Press block="Gamepad buttons %button Is pressed？"  group="PH2.0手柄"
     //% weight=74
-    //% subcategory="基础输入模块"
+    //% subcategory="Basic input module"
     //% inlineInputMode=inline
     export function Gamepad_Press(button: barb_fitting): boolean {
         if(Get_Button_Status(button) != NONE_PRESS && Get_Button_Status(button) != 0xff)
@@ -490,7 +490,7 @@ namespace sensors {
      */
     //% blockId=Gamepad_Release block="Gamepad buttons %button Is Released？"  group="PH2.0手柄"
     //% weight=74
-    //% subcategory="基础输入模块"
+    //% subcategory="Basic input module"
     //% inlineInputMode=inline
     export function Gamepad_Release(button: barb_fitting): boolean {
         if(Get_Button_Status(button) == NONE_PRESS)
