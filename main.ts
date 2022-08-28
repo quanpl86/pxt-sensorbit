@@ -1955,7 +1955,7 @@ namespace sensors {
 
    
     //% blockId="Speech_recognition_reset" block="Voice recognition module for reset"  group="speech recognition module"
-    //% subcategory="smart module"
+    //% subcategory="Smart module"
     //% inlineInputMode=inline
      //% weight=100
     export function Speech_recognition_reset(): void {
@@ -1964,7 +1964,7 @@ namespace sensors {
     }
     
     //% blockId="Speech_recognition_start" block="Voice recognition starts to recognize"  group="speech recognition module"
-    //% subcategory="smart module"
+    //% subcategory="Smart module"
     //% inlineInputMode=inline
     //% weight=99
     export function Speech_recognition_start(): void {
@@ -1973,7 +1973,7 @@ namespace sensors {
     }
 
     //% blockId="Speech_recognition_mode" block="The voice recognition mode is set to %Mode"  group="speech recognition module"
-    //% subcategory="smart module"
+    //% subcategory="Smart module"
     //% inlineInputMode=inline
     //% weight=98
     export function Speech_recognition_mode(Mode : Mode): void {
@@ -1982,7 +1982,7 @@ namespace sensors {
     }
 
     //% blockId="Speech_recognition_glossary" block="Voice recognition to set the word number %word_number|Word content %word_content"  group="speech recognition module"
-    //% subcategory="smart module"
+    //% subcategory="Smart module"
     //% inlineInputMode=inline
     //% weight=95
     export function Speech_recognition_glossary(word_number : number, word_content : string): void {
@@ -1992,7 +1992,7 @@ namespace sensors {
 
 
     //% blockId="Speech_recognition_get_result" block="Speech recognition to get the corresponding number of the recognized words"   group="speech recognition module"
-    //% subcategory="smart module"
+    //% subcategory="Smart module"
     //% inlineInputMode=inline
     //% weight=96
     export function Speech_recognition_get_result(): number {
@@ -2001,7 +2001,7 @@ namespace sensors {
      }
 
     //% blockId="Speech_recognition_time" block="Voice recognition to set wake-up time %time"  group="speech recognition module"
-    //% subcategory="smart module"
+    //% subcategory="Smart module"
     //% inlineInputMode=inline
     //% weight=97
     export function Speech_recognition_time(time : number): void {
